@@ -6,6 +6,7 @@
   <title>BROOK FARM RUN 2026</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -19,13 +20,22 @@
       overflow-x:hidden;
     }
 
+    /* HEADER BANNER */
+
+    .top-banner{
+      width:100%;
+      background:#000;
+    }
+
+    .top-banner img{
+      width:100%;
+      display:block;
+      object-fit:cover;
+    }
+
     .hero{
-      background:
-      linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
-      url('banner.jpg');
-      background-size:cover;
-      background-position:center;
-      padding:70px 20px 50px;
+      padding:50px 20px 40px;
+      background:#000;
     }
 
     .hero h1{
@@ -209,7 +219,8 @@
     }
 
     .success-page,
-    .failed-page{
+    .failed-page,
+    .loading-page{
       display:none;
       text-align:center;
     }
@@ -217,6 +228,8 @@
     .success-page h2{
       color:#c6ff00;
       margin-bottom:20px;
+      font-size:42px;
+      line-height:1.4;
     }
 
     .failed-page h2{
@@ -232,17 +245,53 @@
       text-align:left;
       line-height:2;
       margin-top:25px;
+      font-size:18px;
     }
 
     .wa-btn{
       display:inline-block;
       margin-top:30px;
-      background:#25D366;
+      background:#00db4f;
       color:white;
-      padding:15px 25px;
-      border-radius:12px;
+      padding:18px 25px;
+      border-radius:18px;
       text-decoration:none;
       font-weight:bold;
+      font-size:20px;
+    }
+
+    /* LOADING */
+
+    .loading-page{
+      padding:80px 20px;
+    }
+
+    .loader{
+      width:90px;
+      height:90px;
+      border:8px solid rgba(255,255,255,0.1);
+      border-top:8px solid #c6ff00;
+      border-radius:50%;
+      margin:0 auto 30px;
+      animation:spin 1s linear infinite;
+    }
+
+    @keyframes spin{
+      100%{
+        transform:rotate(360deg);
+      }
+    }
+
+    .loading-page h2{
+      color:#c6ff00;
+      font-size:38px;
+      margin-bottom:20px;
+    }
+
+    .loading-page p{
+      color:#ddd;
+      font-size:20px;
+      line-height:1.8;
     }
 
     @media(max-width:768px){
@@ -259,11 +308,22 @@
         font-size:18px;
       }
 
+      .success-page h2{
+        font-size:30px;
+      }
+
     }
 
   </style>
 </head>
 <body>
+
+<!-- BANNER FIX -->
+
+<div class="top-banner">
+  <img src="banner.jpg" alt="BROOK FARM RUN">
+</div>
+
 
 <div id="formPage">
 
@@ -349,18 +409,22 @@
       <input type="text" id="bibname" required>
 
       <label>Nomor IDENTITAS :</label>
+
       <input type="text"
       id="identity"
       placeholder="KTP / SIM / PASPOR / Kartu Pelajar"
       required>
 
       <label>E-mail Aktif :</label>
+
       <input type="email" id="email" required>
 
       <label>No.Whatsapp :</label>
+
       <input type="tel" id="whatsapp" required>
 
       <label>Alamat Lengkap/Domisili :</label>
+
       <textarea id="address" required></textarea>
 
       <div class="size-card">
@@ -468,6 +532,28 @@
 
 
 
+<!-- LOADING PAGE -->
+
+<div class="container loading-page" id="loadingPage">
+
+  <div class="loader"></div>
+
+  <h2>
+    Registrasi Anda Sedang Diproses
+  </h2>
+
+  <p>
+    Mohon tunggu sebentar...
+    <br>
+    Sistem sedang melakukan verifikasi data peserta
+  </p>
+
+</div>
+
+
+
+<!-- SUCCESS PAGE -->
+
 <div class="container success-page" id="successPage">
 
   <h2>
@@ -488,6 +574,8 @@
 </div>
 
 
+
+<!-- FAILED PAGE -->
 
 <div class="container failed-page" id="failedPage">
 
@@ -574,7 +662,7 @@
 
 
 
-  // SUBMIT FORM
+  // SUBMIT FORM + LOADING 1 MENIT
 
   document.getElementById('registerForm')
   .addEventListener('submit', function(e){
@@ -613,42 +701,64 @@
 
 
 
+    // FORM HILANG
+
     document.getElementById('formPage').style.display = 'none';
 
-    document.getElementById('successPage').style.display = 'block';
+
+    // LOADING MUNCUL
+
+    document.getElementById('loadingPage').style.display = 'block';
 
 
 
-    document.getElementById('resultData').innerHTML = `
+    // DELAY 1 MENIT
 
-      <strong>Nama Lengkap :</strong>
-      ${fullname}<br>
+    setTimeout(() => {
 
-      <strong>Nama BIB :</strong>
-      ${bibname}<br>
+      // LOADING HILANG
 
-      <strong>Nomor IDENTITAS :</strong>
-      ${identity}<br>
+      document.getElementById('loadingPage').style.display = 'none';
 
-      <strong>E-mail Aktif :</strong>
-      ${email}<br>
 
-      <strong>No.Whatsapp :</strong>
-      ${whatsapp}<br>
+      // HALAMAN SUKSES MUNCUL
 
-      <strong>Alamat Lengkap/Domisili :</strong>
-      ${address}<br>
+      document.getElementById('successPage').style.display = 'block';
 
-      <strong>Ukuran Kaos :</strong>
-      ${shirt}<br>
 
-      <strong>Category :</strong>
-      ${categoryText}<br>
 
-      <strong>Total Harga :</strong>
-      Rp ${price}
+      document.getElementById('resultData').innerHTML = `
 
-    `;
+        <strong>Nama Lengkap :</strong>
+        ${fullname}<br><br>
+
+        <strong>Nama BIB :</strong>
+        ${bibname}<br><br>
+
+        <strong>Nomor IDENTITAS :</strong>
+        ${identity}<br><br>
+
+        <strong>E-mail Aktif :</strong>
+        ${email}<br><br>
+
+        <strong>No.Whatsapp :</strong>
+        ${whatsapp}<br><br>
+
+        <strong>Alamat Lengkap/Domisili :</strong>
+        ${address}<br><br>
+
+        <strong>Ukuran Kaos :</strong>
+        ${shirt}<br><br>
+
+        <strong>Category :</strong>
+        ${categoryText}<br><br>
+
+        <strong>Total Harga :</strong>
+        Rp ${price}
+
+      `;
+
+    }, 60000);
 
   });
 
