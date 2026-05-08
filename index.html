@@ -6,497 +6,653 @@
   <title>BROOK FARM RUN 2026</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
     }
 
-    body {
-      background: #000;
-      color: white;
-      min-height: 100vh;
-      overflow-x: hidden;
+    body{
+      background:#000;
+      color:white;
+      overflow-x:hidden;
     }
 
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.8)), url('banner.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 60px 20px 40px;
+    .hero{
+      background:
+      linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+      url('banner.jpg');
+      background-size:cover;
+      background-position:center;
+      padding:70px 20px 50px;
     }
 
-    .hero h1 {
-      text-align: center;
-      font-size: 60px;
-      font-weight: bold;
-      margin-bottom: 10px;
+    .hero h1{
+      text-align:center;
+      font-size:65px;
+      font-weight:bold;
+      margin-bottom:15px;
     }
 
-    .hero p {
-      text-align: center;
-      color: #ddd;
-      margin-bottom: 40px;
-      font-size: 18px;
+    .hero p{
+      text-align:center;
+      color:#ddd;
+      font-size:18px;
+      margin-bottom:50px;
     }
 
-    .category-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 50px;
+    .category-wrapper{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:30px;
     }
 
-    .category-box {
-      width: 430px;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.1);
-      backdrop-filter: blur(8px);
-      border-radius: 25px;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    .category-box{
+      width:430px;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+      backdrop-filter:blur(10px);
+      border-radius:25px;
+      padding:30px;
+      box-shadow:0 0 20px rgba(0,0,0,0.4);
     }
 
-    .category-box h2 {
-      font-size: 40px;
-      margin-bottom: 20px;
+    .category-box h2{
+      font-size:42px;
+      margin-bottom:20px;
     }
 
-    .badge {
-      display: inline-block;
-      background: #c6ff00;
-      color: black;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-weight: bold;
-      margin-bottom: 25px;
+    .badge{
+      display:inline-block;
+      background:#c6ff00;
+      color:#000;
+      padding:10px 22px;
+      border-radius:30px;
+      font-weight:bold;
+      margin-bottom:25px;
     }
 
-    .price-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 18px 20px;
-      margin-bottom: 18px;
-      font-size: 22px;
+    .price-item{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:18px;
+      padding:18px 20px;
+      margin-bottom:18px;
+      font-size:22px;
     }
 
-    .price {
-      color: #c6ff00;
-      font-weight: bold;
+    .price{
+      color:#c6ff00;
+      font-weight:bold;
     }
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #111;
-      padding: 30px;
-      border-radius: 20px;
-      margin-top: 40px;
-      margin-bottom: 50px;
-      border: 1px solid rgba(255,255,255,0.1);
+    .container{
+      max-width:850px;
+      margin:40px auto;
+      background:#111;
+      padding:35px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.1);
     }
 
-    .timer {
-      background: #2a0000;
-      color: #ff4d4d;
-      text-align: center;
-      padding: 15px;
-      border-radius: 12px;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 25px;
+    .timer{
+      background:#2a0000;
+      color:#ff4d4d;
+      text-align:center;
+      padding:15px;
+      border-radius:12px;
+      font-size:20px;
+      font-weight:bold;
+      margin-bottom:30px;
     }
 
-    label {
-      display: block;
-      margin-top: 18px;
-      margin-bottom: 8px;
-      font-weight: bold;
+    label{
+      display:block;
+      margin-top:18px;
+      margin-bottom:8px;
+      font-weight:bold;
     }
 
     input,
     textarea,
-    select {
-      width: 100%;
-      padding: 14px;
-      border-radius: 12px;
-      border: 1px solid #333;
-      background: #1a1a1a;
-      color: white;
-      font-size: 15px;
+    select{
+      width:100%;
+      padding:14px;
+      border-radius:12px;
+      border:1px solid #333;
+      background:#1a1a1a;
+      color:white;
+      font-size:15px;
     }
 
-    textarea {
-      min-height: 100px;
-      resize: vertical;
+    textarea{
+      resize:vertical;
+      min-height:100px;
     }
 
-    .size-card {
-      margin-top: 20px;
-      text-align: center;
+    .size-card{
+      text-align:center;
+      margin-top:25px;
     }
 
-    .size-card img {
-      width: 100%;
-      max-width: 450px;
-      border-radius: 12px;
-      border: 1px solid #333;
+    .size-card img{
+      width:100%;
+      max-width:450px;
+      border-radius:15px;
+      border:1px solid #333;
     }
 
-    .price-box {
-      background: #1c2a00;
-      color: #c6ff00;
-      padding: 16px;
-      border-radius: 12px;
-      margin-top: 20px;
-      font-size: 22px;
-      font-weight: bold;
-      text-align: center;
+    .price-box{
+      background:#1c2a00;
+      color:#c6ff00;
+      padding:18px;
+      border-radius:12px;
+      margin-top:20px;
+      font-size:24px;
+      font-weight:bold;
+      text-align:center;
     }
 
-    .qris {
-      text-align: center;
-      margin-top: 30px;
+    .qris{
+      text-align:center;
+      margin-top:30px;
     }
 
-    .qris img {
-      width: 280px;
-      max-width: 100%;
-      border-radius: 12px;
-      background: white;
-      padding: 10px;
+    .qris img{
+      width:280px;
+      max-width:100%;
+      background:white;
+      padding:10px;
+      border-radius:15px;
     }
 
-    .qris p {
-      margin-top: 12px;
-      font-weight: bold;
-      color: #ddd;
+    .qris p{
+      margin-top:15px;
+      color:#ddd;
+      font-weight:bold;
     }
 
-    .checkbox {
-      display: flex;
-      gap: 10px;
-      margin-top: 25px;
-      align-items: flex-start;
+    .checkbox{
+      display:flex;
+      gap:10px;
+      margin-top:25px;
+      align-items:flex-start;
     }
 
-    .checkbox input {
-      width: auto;
-      margin-top: 5px;
+    .checkbox input{
+      width:auto;
+      margin-top:5px;
     }
 
-    button {
-      width: 100%;
-      padding: 16px;
-      background: #c6ff00;
-      color: black;
-      border: none;
-      border-radius: 15px;
-      font-size: 18px;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 30px;
-      transition: 0.3s;
+    button{
+      width:100%;
+      padding:18px;
+      border:none;
+      border-radius:15px;
+      background:#c6ff00;
+      color:black;
+      font-size:18px;
+      font-weight:bold;
+      margin-top:30px;
+      cursor:pointer;
+      transition:0.3s;
     }
 
-    button:hover {
-      background: #d8ff4d;
-      transform: scale(1.02);
+    button:hover{
+      background:#d8ff4d;
+      transform:scale(1.02);
     }
 
     .success-page,
-    .failed-page {
-      display: none;
-      text-align: center;
+    .failed-page{
+      display:none;
+      text-align:center;
     }
 
-    .success-page h2 {
-      color: #c6ff00;
-      margin-bottom: 20px;
+    .success-page h2{
+      color:#c6ff00;
+      margin-bottom:20px;
     }
 
-    .failed-page h2 {
-      color: red;
-      font-size: 32px;
-      line-height: 1.6;
+    .failed-page h2{
+      color:red;
+      font-size:32px;
+      line-height:1.6;
     }
 
-    .data-box {
-      background: #1a1a1a;
-      padding: 25px;
-      border-radius: 15px;
-      text-align: left;
-      line-height: 2;
-      margin-top: 25px;
+    .data-box{
+      background:#1a1a1a;
+      padding:25px;
+      border-radius:15px;
+      text-align:left;
+      line-height:2;
+      margin-top:25px;
     }
 
-    .wa-btn {
-      display: inline-block;
-      margin-top: 30px;
-      background: #25D366;
-      color: white;
-      padding: 14px 24px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
+    .wa-btn{
+      display:inline-block;
+      margin-top:30px;
+      background:#25D366;
+      color:white;
+      padding:15px 25px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:bold;
     }
 
-    @media(max-width:768px) {
-      .hero h1 {
-        font-size: 42px;
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:42px;
       }
 
-      .category-box {
-        width: 100%;
+      .category-box{
+        width:100%;
       }
 
-      .price-item {
-        font-size: 18px;
+      .price-item{
+        font-size:18px;
       }
+
     }
+
   </style>
 </head>
 <body>
 
-  <div id="formPage">
+<div id="formPage">
 
-    <section class="hero">
-      <h1>EARLY BIRD OPEN-NOW</h1>
-      <p>Pilih kategori tiket sesuai race category kamu.</p>
+  <section class="hero">
 
-      <div class="category-wrapper">
+    <h1>EARLY BIRD OPEN-NOW</h1>
 
-        <div class="category-box">
-          <h2>5K CATEGORY</h2>
-          <div class="badge">LIMITED SLOT</div>
+    <p>
+      Pilih kategori tiket sesuai race category kamu.
+    </p>
 
-          <div class="price-item">
-            <span>5K Pelajar</span>
-            <span class="price">Rp. 150.000</span>
-          </div>
+    <div class="category-wrapper">
 
-          <div class="price-item">
-            <span>5K Umum</span>
-            <span class="price">Rp. 185.000</span>
-          </div>
+      <div class="category-box">
 
-          <div class="price-item">
-            <span>5K Master</span>
-            <span class="price">Rp. 210.000</span>
-          </div>
+        <h2>5K CATEGORY</h2>
+
+        <div class="badge">
+          LIMITED SLOT
         </div>
 
+        <div class="price-item">
+          <span>5K Pelajar</span>
+          <span class="price">Rp. 150.000</span>
+        </div>
 
-        <div class="category-box">
-          <h2>10K CATEGORY</h2>
-          <div class="badge">BEST SELLER</div>
+        <div class="price-item">
+          <span>5K Umum</span>
+          <span class="price">Rp. 185.000</span>
+        </div>
 
-          <div class="price-item">
-            <span>10K Pelajar</span>
-            <span class="price">Rp. 220.000</span>
-          </div>
-
-          <div class="price-item">
-            <span>10K Umum</span>
-            <span class="price">Rp. 250.000</span>
-          </div>
-
-          <div class="price-item">
-            <span>10K Master</span>
-            <span class="price">Rp. 270.000</span>
-          </div>
+        <div class="price-item">
+          <span>5K Master</span>
+          <span class="price">Rp. 210.000</span>
         </div>
 
       </div>
-    </section>
 
 
-    <div class="container">
+      <div class="category-box">
 
-      <div class="timer">
-        Waktu Pengisian Tersisa : <span id="countdown">08:00</span>
+        <h2>10K CATEGORY</h2>
+
+        <div class="badge">
+          BEST SELLER
+        </div>
+
+        <div class="price-item">
+          <span>10K Pelajar</span>
+          <span class="price">Rp. 220.000</span>
+        </div>
+
+        <div class="price-item">
+          <span>10K Umum</span>
+          <span class="price">Rp. 250.000</span>
+        </div>
+
+        <div class="price-item">
+          <span>10K Master</span>
+          <span class="price">Rp. 270.000</span>
+        </div>
+
       </div>
-
-      <form id="registerForm">
-
-        <label>Nama Lengkap :</label>
-        <input type="text" id="fullname" required>
-
-        <label>Nama BIB (Nama Untuk Di kaos) :</label>
-        <input type="text" id="bibname" required>
-
-        <label>Nomor IDENTITAS :</label>
-        <input type="text" id="identity" placeholder="KTP / SIM / PASPOR / Kartu Pelajar" required>
-
-        <label>E-mail Aktif :</label>
-        <input type="email" id="email" required>
-
-        <label>No.Whatsapp :</label>
-        <input type="tel" id="whatsapp" required>
-
-        <label>Alamat Lengkap/Domisili :</label>
-        <textarea id="address" required></textarea>
-
-        <div class="size-card">
-          <label>Size Card</label>
-          <img src="sizecard.jpg" alt="Size Card">
-        </div>
-
-        <label>Ukuran Kaos :</label>
-        <select id="shirt" required>
-          <option value="">-- Pilih Ukuran Kaos --</option>
-          <option>S</option>
-          <option>M</option>
-          <option>L</option>
-          <option>XL</option>
-          <option>XXL</option>
-        </select>
-
-        <label>Category :</label>
-        <select id="category" required>
-          <option value="">-- Pilih Category --</option>
-          <option value="150000">5K Pelajar - Rp150.000</option>
-          <option value="185000">5K Umum - Rp185.000</option>
-          <option value="210000">5K Master - Rp210.000</option>
-          <option value="220000">10K Pelajar - Rp220.000</option>
-          <option value="250000">10K Umum - Rp250.000</option>
-          <option value="270000">10K Master - Rp270.000</option>
-        </select>
-
-        <div class="price-box">
-          Total Harga Otomatis : Rp <span id="totalPrice">0</span>
-        </div>
-
-
-        <div class="qris">
-          <img src="qris.png" alt="QRIS">
-          <p>Silahkan Scan, Masukan Nominal sesuai Category</p>
-        </div>
-
-
-        <label>Upload file/Bukti pembayaran :</label>
-        <input type="file" id="payment" required>
-
-
-        <div class="checkbox">
-          <input type="checkbox" id="agree" required>
-          <label for="agree">
-            ✅ saya telah siap mengikuti ketentuan dan Aturan BROOK FARM RUN 2026
-          </label>
-        </div>
-
-
-        <button type="submit">Daftar Sekarang</button>
-
-      </form>
 
     </div>
+
+  </section>
+
+
+  <div class="container">
+
+    <div class="timer">
+      Waktu Pengisian Tersisa :
+      <span id="countdown">08:00</span>
+    </div>
+
+    <form id="registerForm">
+
+      <label>Nama Lengkap :</label>
+      <input type="text" id="fullname" required>
+
+      <label>Nama BIB (Nama Untuk Di kaos) :</label>
+      <input type="text" id="bibname" required>
+
+      <label>Nomor IDENTITAS :</label>
+      <input type="text"
+      id="identity"
+      placeholder="KTP / SIM / PASPOR / Kartu Pelajar"
+      required>
+
+      <label>E-mail Aktif :</label>
+      <input type="email" id="email" required>
+
+      <label>No.Whatsapp :</label>
+      <input type="tel" id="whatsapp" required>
+
+      <label>Alamat Lengkap/Domisili :</label>
+      <textarea id="address" required></textarea>
+
+      <div class="size-card">
+
+        <label>Size Card</label>
+
+        <img src="sizecard.jpg" alt="Size Card">
+
+      </div>
+
+      <label>Ukuran Kaos :</label>
+
+      <select id="shirt" required>
+
+        <option value="">
+          -- Pilih Ukuran Kaos --
+        </option>
+
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+        <option>XXL</option>
+
+      </select>
+
+
+      <label>Category :</label>
+
+      <select id="category" required>
+
+        <option value="">
+          -- Pilih Category --
+        </option>
+
+        <option value="150000">
+          5K Pelajar - Rp150.000
+        </option>
+
+        <option value="185000">
+          5K Umum - Rp185.000
+        </option>
+
+        <option value="210000">
+          5K Master - Rp210.000
+        </option>
+
+        <option value="220000">
+          10K Pelajar - Rp220.000
+        </option>
+
+        <option value="250000">
+          10K Umum - Rp250.000
+        </option>
+
+        <option value="270000">
+          10K Master - Rp270.000
+        </option>
+
+      </select>
+
+
+      <div class="price-box">
+        Total Harga Otomatis :
+        Rp <span id="totalPrice">0</span>
+      </div>
+
+
+      <div class="qris">
+
+        <img src="qris.png" alt="QRIS">
+
+        <p>
+          Silahkan Scan, Masukan Nominal sesuai Category
+        </p>
+
+      </div>
+
+
+      <label>Upload file/Bukti pembayaran :</label>
+
+      <input type="file" id="payment" required>
+
+
+      <div class="checkbox">
+
+        <input type="checkbox" id="agree" required>
+
+        <label for="agree">
+          ✅ saya telah siap mengikuti ketentuan dan Aturan BROOK FARM RUN 2026
+        </label>
+
+      </div>
+
+
+      <button type="submit">
+        Daftar Sekarang
+      </button>
+
+    </form>
+
   </div>
 
-
-  <div class="container success-page" id="successPage">
-    <h2>Registrasi Pendaftaran Sedang Dalam Proses</h2>
-
-    <div class="data-box" id="resultData"></div>
-
-    <a href="https://wa.me/628217003017" target="_blank" class="wa-btn">
-      Costumer Service whatsapp : +628 217003 017
-    </a>
-  </div>
+</div>
 
 
-  <div class="container failed-page" id="failedPage">
-    <h2>
-      VERIFIKASI GAGAL<br>
-      SILAHKAN LAKUKAN PENDAFTARAN DAN PEMBAYARAN ULANG
-    </h2>
-  </div>
+
+<div class="container success-page" id="successPage">
+
+  <h2>
+    Registrasi Pendaftaran Sedang Dalam Proses
+  </h2>
+
+  <div class="data-box" id="resultData"></div>
+
+  <a href="https://wa.me/628217003017"
+  target="_blank"
+  class="wa-btn">
+
+    Costumer Service whatsapp :
+    +628 217003 017
+
+  </a>
+
+</div>
 
 
-  <script>
 
-    // AUTO TOTAL HARGA
-    const category = document.getElementById('category');
-    const totalPrice = document.getElementById('totalPrice');
+<div class="container failed-page" id="failedPage">
 
-    category.addEventListener('change', function() {
-      const value = parseInt(this.value) || 0;
-      totalPrice.innerText = value.toLocaleString('id-ID');
-    });
+  <h2>
+    VERIFIKASI GAGAL
+    <br>
+    SILAHKAN LAKUKAN PENDAFTARAN DAN PEMBAYARAN ULANG
+  </h2>
 
-
-    // TIMER 8 MENIT
-    let timeLeft = 480;
-
-    const countdown = document.getElementById('countdown');
-
-    const timer = setInterval(() => {
-
-      let minutes = Math.floor(timeLeft / 60);
-      let seconds = timeLeft % 60;
-
-      minutes = minutes < 10 ? '0' + minutes : minutes;
-      seconds = seconds < 10 ? '0' + seconds : seconds;
-
-      countdown.innerHTML = `${minutes}:${seconds}`;
-
-      if(timeLeft <= 0) {
-        clearInterval(timer);
-
-        document.getElementById('formPage').style.display = 'none';
-        document.getElementById('failedPage').style.display = 'block';
-      }
-
-      timeLeft--;
-
-    }, 1000);
+</div>
 
 
-    // SUBMIT FORM
-    document.getElementById('registerForm').addEventListener('submit', function(e){
 
-      e.preventDefault();
+<script>
+
+  // AUTO TOTAL HARGA
+
+  const category =
+  document.getElementById('category');
+
+  const totalPrice =
+  document.getElementById('totalPrice');
+
+
+  category.addEventListener('change', function(){
+
+    const value =
+    parseInt(this.value) || 0;
+
+    totalPrice.innerText =
+    value.toLocaleString('id-ID');
+
+  });
+
+
+
+
+  // TIMER 8 MENIT
+
+  let timeLeft = 480;
+
+  const countdown =
+  document.getElementById('countdown');
+
+
+  const timer = setInterval(() => {
+
+    let minutes =
+    Math.floor(timeLeft / 60);
+
+    let seconds =
+    timeLeft % 60;
+
+
+    minutes =
+    minutes < 10 ?
+    '0' + minutes :
+    minutes;
+
+    seconds =
+    seconds < 10 ?
+    '0' + seconds :
+    seconds;
+
+
+    countdown.innerHTML =
+    `${minutes}:${seconds}`;
+
+
+    if(timeLeft <= 0){
 
       clearInterval(timer);
 
-      const fullname = document.getElementById('fullname').value;
-      const bibname = document.getElementById('bibname').value;
-      const identity = document.getElementById('identity').value;
-      const email = document.getElementById('email').value;
-      const whatsapp = document.getElementById('whatsapp').value;
-      const address = document.getElementById('address').value;
-      const shirt = document.getElementById('shirt').value;
-
-      const categoryText = category.options[category.selectedIndex].text;
-
-      const price = totalPrice.innerText;
-
-
       document.getElementById('formPage').style.display = 'none';
-      document.getElementById('successPage').style.display = 'block';
+
+      document.getElementById('failedPage').style.display = 'block';
+
+    }
+
+    timeLeft--;
+
+  },1000);
 
 
-      document.getElementById('resultData').innerHTML = `
-        <strong>Nama Lengkap :</strong> ${fullname}<br>
-        <strong>Nama BIB :</strong> ${bibname}<br>
-        <strong>Nomor IDENTITAS :</strong> ${identity}<br>
-        <strong>E-mail Aktif :</strong> ${email}<br>
-        <strong>No.Whatsapp :</strong> ${whatsapp}<br>
-        <strong>Alamat Lengkap/Domisili :</strong> ${address}<br>
-        <strong>Ukuran Kaos :</strong> ${shirt}<br>
-        <strong>Category :</strong> ${categoryText}<br>
-        <strong>Total Harga :</strong> Rp ${price}
-      `;
 
-    });
 
-  </script>
+  // SUBMIT FORM
+
+  document.getElementById('registerForm')
+  .addEventListener('submit', function(e){
+
+    e.preventDefault();
+
+    clearInterval(timer);
+
+
+    const fullname =
+    document.getElementById('fullname').value;
+
+    const bibname =
+    document.getElementById('bibname').value;
+
+    const identity =
+    document.getElementById('identity').value;
+
+    const email =
+    document.getElementById('email').value;
+
+    const whatsapp =
+    document.getElementById('whatsapp').value;
+
+    const address =
+    document.getElementById('address').value;
+
+    const shirt =
+    document.getElementById('shirt').value;
+
+    const categoryText =
+    category.options[category.selectedIndex].text;
+
+    const price =
+    totalPrice.innerText;
+
+
+
+    document.getElementById('formPage').style.display = 'none';
+
+    document.getElementById('successPage').style.display = 'block';
+
+
+
+    document.getElementById('resultData').innerHTML = `
+
+      <strong>Nama Lengkap :</strong>
+      ${fullname}<br>
+
+      <strong>Nama BIB :</strong>
+      ${bibname}<br>
+
+      <strong>Nomor IDENTITAS :</strong>
+      ${identity}<br>
+
+      <strong>E-mail Aktif :</strong>
+      ${email}<br>
+
+      <strong>No.Whatsapp :</strong>
+      ${whatsapp}<br>
+
+      <strong>Alamat Lengkap/Domisili :</strong>
+      ${address}<br>
+
+      <strong>Ukuran Kaos :</strong>
+      ${shirt}<br>
+
+      <strong>Category :</strong>
+      ${categoryText}<br>
+
+      <strong>Total Harga :</strong>
+      Rp ${price}
+
+    `;
+
+  });
+
+</script>
 
 </body>
 </html>
