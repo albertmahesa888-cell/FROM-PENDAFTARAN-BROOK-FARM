@@ -1,101 +1,400 @@
-<!-- ========================================= -->
-<!-- TAMBAHKAN FILE INI KE FOLDER WEBSITE -->
-<!-- ========================================= -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!--
-banner.jpg
-qris.png
--->
+<title>Form Pendaftaran - Brook Almond Farm Run 2026</title>
 
-<!-- ========================================= -->
-<!-- FORM PENDAFTARAN FULL -->
-<!-- ========================================= -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<section id="register" style="padding:100px 7%;">
+<style>
 
-<div style="
-max-width:1200px;
-margin:auto;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050805;
+overflow-x:hidden;
+color:white;
+position:relative;
+}
+
+/* BACKGROUND */
+
+.background{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.9)),
+url('background.png');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+z-index:-3;
+}
+
+.background::before{
+content:'';
+position:absolute;
+inset:0;
+background:
+radial-gradient(circle at top left, rgba(200,255,0,.18), transparent 30%),
+radial-gradient(circle at bottom right, rgba(200,255,0,.12), transparent 30%);
+}
+
+/* NOISE */
+
+.noise{
+position:fixed;
+inset:0;
+background:url('https://grainy-gradients.vercel.app/noise.svg');
+opacity:.05;
+pointer-events:none;
+z-index:-1;
+}
+
+/* SECTION */
+
+.register-section{
+padding:70px 7%;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* WRAP */
+
+.register-wrap{
+width:100%;
+max-width:1250px;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:40px;
-align-items:start;
-">
+}
 
-<!-- LEFT -->
+/* LEFT */
 
-<div style="
+.left-box{
 background:rgba(255,255,255,.05);
 border:1px solid rgba(255,255,255,.08);
-border-radius:30px;
+border-radius:35px;
 overflow:hidden;
-backdrop-filter:blur(12px);
-">
+backdrop-filter:blur(15px);
+animation:fadeUp 1s ease;
+}
 
-<img src="banner.jpg" style="
+.left-box img{
 width:100%;
-height:300px;
+height:320px;
 object-fit:cover;
 display:block;
-">
+}
 
-<div style="padding:35px;">
+.left-content{
+padding:40px;
+}
 
-<h2 style="
-font-size:2.3rem;
+.left-content h1{
+font-size:2.5rem;
 margin-bottom:20px;
+line-height:1.1;
 color:#c8ff00;
-">
-Brook Almond Farm Run 2026
-</h2>
+}
 
-<p style="
+.left-content p{
 line-height:1.9;
 color:#d0d0d0;
 margin-bottom:30px;
-">
+}
 
-📍 Plaza Parkir Timur GBK<br><br>
+.info{
+background:rgba(255,255,255,.04);
+padding:18px 20px;
+border-radius:18px;
+margin-bottom:15px;
+border:1px solid rgba(255,255,255,.06);
+font-weight:600;
+}
 
-📅 23 Agustus 2026<br><br>
+/* RIGHT */
 
-Nikmati pengalaman event lari premium dengan konsep modern cinematic race vibes, live entertainment, exclusive medal, dan ribuan peserta dari seluruh Indonesia.
+.right-box{
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+border-radius:35px;
+padding:40px;
+backdrop-filter:blur(15px);
+animation:fadeUp 1.2s ease;
+}
 
+.right-box h2{
+font-size:2.3rem;
+margin-bottom:10px;
+}
+
+.right-box p{
+color:#bdbdbd;
+margin-bottom:35px;
+}
+
+/* FORM */
+
+.form-group{
+margin-bottom:24px;
+}
+
+.form-group label{
+display:block;
+margin-bottom:10px;
+font-weight:700;
+font-size:14px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+width:100%;
+padding:18px;
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.08);
+border-radius:18px;
+outline:none;
+color:white;
+font-size:15px;
+transition:.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+border-color:#c8ff00;
+box-shadow:0 0 20px rgba(200,255,0,.2);
+}
+
+.form-group textarea{
+height:120px;
+resize:none;
+}
+
+/* SIZE CHART */
+
+.size-chart{
+margin-top:10px;
+background:rgba(255,255,255,.04);
+padding:25px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+.size-chart h3{
+text-align:center;
+margin-bottom:20px;
+font-size:1.4rem;
+color:#c8ff00;
+}
+
+.size-chart img{
+width:100%;
+border-radius:20px;
+display:block;
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+
+/* QRIS */
+
+.qris-box{
+margin-top:30px;
+background:rgba(255,255,255,.04);
+padding:25px;
+border-radius:25px;
+border:1px solid rgba(255,255,255,.08);
+text-align:center;
+}
+
+.qris-box h3{
+margin-bottom:20px;
+font-size:1.5rem;
+color:#c8ff00;
+}
+
+.qris-box img{
+width:260px;
+max-width:100%;
+border-radius:20px;
+margin-bottom:20px;
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+
+.qris-box p{
+font-size:14px;
+line-height:1.8;
+color:#d0d0d0;
+margin:0;
+}
+
+/* BUTTON */
+
+.submit-btn{
+width:100%;
+padding:20px;
+margin-top:30px;
+border:none;
+border-radius:20px;
+background:#c8ff00;
+color:black;
+font-size:16px;
+font-weight:900;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 0 30px rgba(200,255,0,.4);
+}
+
+.submit-btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 60px rgba(200,255,0,.7);
+}
+
+/* FAKE LIVE */
+
+.live-popup{
+position:fixed;
+left:20px;
+bottom:20px;
+background:rgba(0,0,0,.8);
+backdrop-filter:blur(15px);
+padding:18px 22px;
+border-radius:18px;
+display:flex;
+align-items:center;
+gap:12px;
+z-index:999;
+border:1px solid rgba(255,255,255,.08);
+animation:popupAnim 12s infinite;
+}
+
+.dot{
+width:12px;
+height:12px;
+background:#c8ff00;
+border-radius:50%;
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+0%,100%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.5);
+}
+}
+
+@keyframes popupAnim{
+0%,100%{
+opacity:0;
+transform:translateY(100px);
+}
+10%,80%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:950px){
+
+.register-wrap{
+grid-template-columns:1fr;
+}
+
+.left-content h1{
+font-size:2rem;
+}
+
+}
+
+@media(max-width:600px){
+
+.right-box,
+.left-content{
+padding:28px;
+}
+
+.right-box h2{
+font-size:1.8rem;
+}
+
+.left-content h1{
+font-size:1.8rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="background"></div>
+<div class="noise"></div>
+
+<section class="register-section">
+
+<div class="register-wrap">
+
+<!-- LEFT -->
+
+<div class="left-box">
+
+<img src="banner.jpg">
+
+<div class="left-content">
+
+<h1>
+BROOK ALMOND<br>
+FARM RUN 2026
+</h1>
+
+<p>
+Event lari premium paling hype tahun 2026 hadir di Plaza Parkir Timur GBK dengan konsep cinematic race vibes, live entertainment, dan ribuan peserta dari seluruh Indonesia.
 </p>
 
-<div style="
-display:flex;
-flex-direction:column;
-gap:15px;
-">
+<div class="info">
+📍 Plaza Parkir Timur GBK
+</div>
 
-<div style="
-background:rgba(255,255,255,.04);
-padding:18px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.06);
-">
+<div class="info">
+📅 23 Agustus 2026
+</div>
+
+<div class="info">
 🔥 Early Bird Open Now
 </div>
 
-<div style="
-background:rgba(255,255,255,.04);
-padding:18px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.06);
-">
-⚡ Limited Slot Available
+<div class="info">
+⚡ Slot Hampir Habis
 </div>
 
-<div style="
-background:rgba(255,255,255,.04);
-padding:18px;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.06);
-">
+<div class="info">
 🏅 Official Medal & Jersey
-</div>
-
 </div>
 
 </div>
@@ -104,131 +403,53 @@ border:1px solid rgba(255,255,255,.06);
 
 <!-- RIGHT -->
 
-<div style="
-background:rgba(255,255,255,.05);
-border:1px solid rgba(255,255,255,.08);
-border-radius:30px;
-padding:40px;
-backdrop-filter:blur(14px);
-">
+<div class="right-box">
 
-<h2 style="
-font-size:2.2rem;
-margin-bottom:10px;
-">
-FORM PENDAFTARAN
-</h2>
+<h2>FORM PENDAFTARAN</h2>
 
-<p style="
-color:#bdbdbd;
-margin-bottom:35px;
-">
-Isi data peserta dengan lengkap.
+<p>
+Isi data peserta dengan lengkap untuk mengikuti event.
 </p>
 
 <form>
 
 <!-- NAMA -->
 
-<div style="margin-bottom:22px;">
+<div class="form-group">
 
-<label style="
-display:block;
-margin-bottom:10px;
-font-weight:600;
-">
-Nama Lengkap
-</label>
+<label>Nama Lengkap</label>
 
-<input type="text" placeholder="Masukkan nama lengkap" style="
-width:100%;
-padding:18px;
-border:none;
-outline:none;
-border-radius:16px;
-background:rgba(255,255,255,.06);
-color:white;
-font-size:15px;
-border:1px solid rgba(255,255,255,.08);
-">
+<input type="text" placeholder="Masukkan nama lengkap">
 
 </div>
 
 <!-- EMAIL -->
 
-<div style="margin-bottom:22px;">
+<div class="form-group">
 
-<label style="
-display:block;
-margin-bottom:10px;
-font-weight:600;
-">
-Email
-</label>
+<label>Email</label>
 
-<input type="email" placeholder="Masukkan email aktif" style="
-width:100%;
-padding:18px;
-border:none;
-outline:none;
-border-radius:16px;
-background:rgba(255,255,255,.06);
-color:white;
-font-size:15px;
-border:1px solid rgba(255,255,255,.08);
-">
+<input type="email" placeholder="Masukkan email aktif">
 
 </div>
 
-<!-- WHATSAPP -->
+<!-- WA -->
 
-<div style="margin-bottom:22px;">
+<div class="form-group">
 
-<label style="
-display:block;
-margin-bottom:10px;
-font-weight:600;
-">
-Nomor WhatsApp
-</label>
+<label>Nomor WhatsApp</label>
 
-<input type="number" placeholder="08xxxxxxxxxx" style="
-width:100%;
-padding:18px;
-border:none;
-outline:none;
-border-radius:16px;
-background:rgba(255,255,255,.06);
-color:white;
-font-size:15px;
-border:1px solid rgba(255,255,255,.08);
-">
+<input type="number" placeholder="08xxxxxxxxxx">
 
 </div>
 
-<!-- KATEGORI -->
+<!-- TIKET -->
 
-<div style="margin-bottom:22px;">
+<div class="form-group">
 
-<label style="
-display:block;
-margin-bottom:10px;
-font-weight:600;
-">
-Kategori Tiket
-</label>
+<label>Kategori Tiket</label>
 
-<select style="
-width:100%;
-padding:18px;
-border:none;
-outline:none;
-border-radius:16px;
-background:rgba(255,255,255,.06);
-color:white;
-font-size:15px;
-border:1px solid rgba(255,255,255,.08);
-">
+<select>
 
 <option>5K Pelajar - Rp.150.000</option>
 <option>5K Umum - Rp.185.000</option>
@@ -242,147 +463,74 @@ border:1px solid rgba(255,255,255,.08);
 
 </div>
 
-<!-- UKURAN -->
+<!-- SIZE -->
 
-<div style="margin-bottom:22px;">
+<div class="form-group">
 
-<label style="
-display:block;
-margin-bottom:10px;
-font-weight:600;
-">
-Ukuran Jersey
-</label>
+<label>Ukuran Jersey</label>
 
-<select style="
-width:100%;
-padding:18px;
-border:none;
-outline:none;
-border-radius:16px;
-background:rgba(255,255,255,.06);
-color:white;
-font-size:15px;
-border:1px solid rgba(255,255,255,.08);
-">
+<select>
 
+<option>XS</option>
 <option>S</option>
 <option>M</option>
 <option>L</option>
 <option>XL</option>
-<option>XXL</option>
+<option>2XL</option>
+<option>3XL</option>
 
 </select>
 
 </div>
 
+<!-- SIZE CHART -->
+
+<div class="size-chart">
+
+<h3>SIZE CHART JERSEY</h3>
+
+<img src="sizechart.jpg">
+
+</div>
+
 <!-- ALAMAT -->
 
-<div style="margin-bottom:22px;">
+<div class="form-group" style="margin-top:25px;">
 
-<label style="
-display:block;
-margin-bottom:10px;
-font-weight:600;
-">
-Alamat
-</label>
+<label>Alamat Lengkap</label>
 
-<textarea placeholder="Masukkan alamat lengkap" style="
-width:100%;
-height:120px;
-padding:18px;
-border:none;
-outline:none;
-border-radius:16px;
-background:rgba(255,255,255,.06);
-color:white;
-font-size:15px;
-border:1px solid rgba(255,255,255,.08);
-resize:none;
-"></textarea>
+<textarea placeholder="Masukkan alamat lengkap"></textarea>
 
 </div>
 
 <!-- QRIS -->
 
-<div style="
-margin-top:35px;
-background:rgba(255,255,255,.04);
-padding:25px;
-border-radius:25px;
-border:1px solid rgba(255,255,255,.08);
-text-align:center;
-">
+<div class="qris-box">
 
-<h3 style="
-margin-bottom:18px;
-color:#c8ff00;
-">
-SCAN QRIS PEMBAYARAN
-</h3>
+<h3>SCAN QRIS PEMBAYARAN</h3>
 
-<img src="qris.png" style="
-width:260px;
-max-width:100%;
-border-radius:20px;
-margin-bottom:20px;
-">
+<img src="qris.png">
 
-<p style="
-color:#cfcfcf;
-line-height:1.8;
-font-size:14px;
-">
-Lakukan pembayaran sesuai kategori tiket yang dipilih, lalu upload bukti pembayaran.
+<p>
+Lakukan pembayaran sesuai kategori tiket yang dipilih lalu upload bukti pembayaran.
 </p>
 
 </div>
 
 <!-- UPLOAD -->
 
-<div style="
-margin-top:30px;
-margin-bottom:30px;
-">
+<div class="form-group" style="margin-top:25px;">
 
-<label style="
-display:block;
-margin-bottom:10px;
-font-weight:600;
-">
-Upload Bukti Pembayaran
-</label>
+<label>Upload Bukti Pembayaran</label>
 
-<input type="file" style="
-width:100%;
-padding:18px;
-border-radius:16px;
-background:rgba(255,255,255,.06);
-color:white;
-border:1px solid rgba(255,255,255,.08);
-">
+<input type="file">
 
 </div>
 
 <!-- BUTTON -->
 
-<button type="submit" style="
-width:100%;
-padding:20px;
-border:none;
-border-radius:20px;
-background:#c8ff00;
-color:black;
-font-size:16px;
-font-weight:800;
-cursor:pointer;
-transition:.4s;
-box-shadow:0 0 30px rgba(200,255,0,.5);
-">
-
+<button type="submit" class="submit-btn">
 DAFTAR SEKARANG
-
 </button>
 
 </form>
@@ -392,3 +540,50 @@ DAFTAR SEKARANG
 </div>
 
 </section>
+
+<!-- POPUP -->
+
+<div class="live-popup">
+
+<div class="dot"></div>
+
+<div>
+<strong>Kevin dari Jakarta</strong><br>
+baru saja membeli tiket 10K Umum.
+</div>
+
+</div>
+
+<script>
+
+/* FAKE LIVE ORDER */
+
+const names = [
+"Andi dari Bandung",
+"Kevin dari Jakarta",
+"Salsa dari Depok",
+"Rama dari Tangerang",
+"Dina dari Surabaya",
+"Fajar dari Bekasi"
+];
+
+const popup = document.querySelector('.live-popup');
+
+setInterval(()=>{
+
+const randomName = names[Math.floor(Math.random()*names.length)];
+
+popup.innerHTML = `
+<div class="dot"></div>
+<div>
+<strong>${randomName}</strong><br>
+baru saja membeli tiket Brook Run.
+</div>
+`;
+
+},5000);
+
+</script>
+
+</body>
+</html>
